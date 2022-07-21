@@ -430,6 +430,7 @@
                             Scanner:
                             <div id="qr-reader" style="width:500px"></div>
                             <div id="qr-reader-results"></div>
+                            <div id="log">Initial content</div>
                         </div>
 
                     </div>
@@ -459,10 +460,10 @@
         var lastResult, countResults = 0;
 
         function onScanSuccess(decodedText, decodedResult) {
-            console.log('decodedText');
             if (decodedText !== lastResult) {
                 ++countResults;
                 lastResult = decodedText;
+                document.getElementById('log').innerHTML = `Scan result ${decodedText}` ;
                 // Handle on success condition with the decoded message.
                 console.log(`Scan result ${decodedText}`, decodedResult);
             }
