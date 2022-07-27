@@ -16,6 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/test2', function () {
+    return view('scan-qr-2');
+});
 
 Route::middleware([
     'auth:sanctum',
